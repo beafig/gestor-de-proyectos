@@ -1,0 +1,132 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Gestor de proyectos",
+    "description": "Para guardar todos tus proyectos de fornma organizada"
+  },
+  "host": "gestor-proyectos.onrender.com",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Gestor de proyectos",
+      "description": "API para consultar proyectos"
+    }
+  ],
+  "paths": {
+  "/api/projects/add": {
+    "post": {
+      "tags": ["Crear proyectos"],
+      "summary": "Crear nuevo proyecto con toda la información",
+      "parameters": [
+        {
+          "name": "autor",
+          "in": "body",
+          "required": true,
+          "type": "string"
+        }, 
+        {
+          "name": "job",
+          "in": "body",
+          "required": true,
+          "type": "string"
+        }, 
+        {
+          "name": "image",
+          "in": "body",
+          "required": true,
+          "type": "string"
+        }, 
+        {
+          "name": "name",
+          "in": "body",
+          "required": true,
+          "type": "string"
+        },         
+        {
+          "name": "slogan",
+          "in": "body",
+          "required": true,
+          "type": "string"
+        },         
+        {
+          "name": "repo",
+          "in": "body",
+          "required": true,
+          "type": "string"
+        },        
+         {
+          "name": "demo",
+          "in": "body",
+          "required": true,
+          "type": "string"
+        },         
+        {
+          "name": "technologies",
+          "in": "body",
+          "required": true,
+          "type": "string"
+        },        
+         {
+          "name": "description",
+          "in": "body",
+          "required": true,
+          "type": "string"
+        },         
+        {
+          "name": "photo",
+          "in": "body",
+          "required": true,
+          "type": "string"
+        },         
+        {
+          "name": "fk_autors",
+          "in": "body",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "success": true
+          }
+        }
+    }
+  }, 
+    "/api/projects/all": {
+      "get": {
+        "tags": ["Ver proyectos"],
+        "summary": "Ver todos los proyectos guardados en la base de datos",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/projects/detail/{projectId}": {
+      "get": {
+         "tags": ["Ver detalle de cada proyecto"],
+
+        "description": "Obtener cada proyecto",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+  }
+}
+  },
+  "schemes": ["http", "https"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"]
+}
